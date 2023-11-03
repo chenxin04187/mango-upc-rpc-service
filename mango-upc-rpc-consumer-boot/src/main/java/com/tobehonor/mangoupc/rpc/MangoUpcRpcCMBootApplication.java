@@ -1,0 +1,15 @@
+package com.tobehonor.mangoupc.rpc;
+
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@EnableDubbo
+@SpringBootApplication
+public class MangoUpcRpcCMBootApplication {
+    
+    public static void main(String[] args) {
+        SpringApplication.run(MangoUpcRpcCMBootApplication.class);
+    }
+}

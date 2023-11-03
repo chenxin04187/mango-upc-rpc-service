@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.tobehonor</groupId>
+    <artifactId>mango-upc-rpc-service</artifactId>
+    <!-- 修改application.properties中的mango.upc.version值时，要同步修改这个值，反之亦然 -->
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    
+    <description>Mango Upc RPC Service</description>
+    <modules>
+        <module>mango-upc-rpc-model</module>
+        <module>mango-upc-rpc-api</module>
+        <module>mango-upc-rpc-user</module>
+        <module>mango-upc-rpc-spring-boot-starter</module>
+        <module>mango-upc-rpc-aware-spring-boot-starter</module>
+        <module>mango-upc-rpc-boot</module>
+        <module>mango-upc-rpc-consumer-boot</module>
+    </modules>
+    <name>mango-upc-rpc-service</name>
+    
+    <parent>
+        <artifactId>mango-upc-parent</artifactId>
+        <groupId>com.tobehonor</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <artifactId>lombok</artifactId>
+                            <groupId>org.projectlombok</groupId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+                <groupId>org.springframework.boot</groupId>
+            </plugin>
+            <!-- 需要时，去掉注释，否则门禁过不去 -->
+            <!--            <plugin>-->
+            <!--                <groupId>org.mybatis.generator</groupId>-->
+            <!--                <artifactId>mybatis-generator-maven-plugin</artifactId>-->
+            <!--                <version>1.4.2</version>-->
+            <!--                <dependencies>-->
+            <!--                    <dependency>-->
+            <!--                        <artifactId>postgresql</artifactId>-->
+            <!--                        <groupId>org.postgresql</groupId>-->
+            <!--                        <version>42.3.6</version>-->
+            <!--                    </dependency>-->
+            <!--                </dependencies>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>Generate MyBatis Artifacts</id>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>generate</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--                <configuration>-->
+            <!--                    &lt;!&ndash;允许移动生成的文件 &ndash;&gt;-->
+            <!--                    <verbose>true</verbose>-->
+            <!--                    &lt;!&ndash; 是否覆盖 &ndash;&gt;-->
+            <!--                    <overwrite>false</overwrite>-->
+            <!--                    &lt;!&ndash; 自动生成的配置 &ndash;&gt;-->
+            <!--                    <configurationFile>src/main/resources/mybatis-generater.xml</configurationFile>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
+        </plugins>
+    </build>
+    
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
